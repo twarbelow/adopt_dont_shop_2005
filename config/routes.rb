@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/shelters/new', to: 'shelters#new'
   post '/shelters', to: 'shelters#create'
   get '/shelters/:id', to: 'shelters#show' # figure out how to restrict what it looks for as :id to numerical value
+  get '/shelters/:id/edit', to: 'shelters#edit'
+  patch '/shelters/:id', to: 'shelters#update'
 end
