@@ -157,7 +157,7 @@ and I am redirected to the Shelter Index page where I see the new Shelter listed
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 5, Shelter Update
 
@@ -491,3 +491,6 @@ Then I see a link to sort shelters in alphabetical order
 When I click on the link
 I'm taken back to the Shelters Index Page where I see all of the shelters in alphabetical order
 ```
+
+### Want to:
+* Refactor specs into better chunked parts
