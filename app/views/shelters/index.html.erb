@@ -3,3 +3,7 @@
 <% @shelters.each do |shelter| %>
   <h2><%= shelter.name %></h2>
 <% end %>
+
+<form action="/shelters/new">
+    <input type="submit" value="New Shelter" />
+</form>
