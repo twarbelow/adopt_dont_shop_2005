@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "shelter index page", type: :feature do
+RSpec.describe "shelter create page", type: :feature do
   it "lets a user add a shelter" do
     visit "/shelters"
 
