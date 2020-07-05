@@ -2,14 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "shelter update page", type: :feature do
   it "lets a user update a shelter" do
-    visit "/shelters"
 
     petaluma = Shelter.create(name: "Petaluma Shelter")
-
+    visit "/shelters/#{petaluma.id}"
     expect(page).to have_selector(:link_or_button, 'Update Shelter')
-    click_on 'Update Shelter'
+    click_on "Update Shelter"
 
-    expect(page).to have_current_path('/shelters/:id/edit')
+    expect(page).to have_current_path("/shelters/#{petaluma.id}/edit")
     expect(page).to have_field('Name')
     expect(page).to have_field('Address')
     expect(page).to have_field('City')
@@ -25,5 +24,12 @@ RSpec.describe "shelter update page", type: :feature do
     fill_in 'Zip', with: new[:zip]
 
     click_on 'Update Shelter'
+
+    expect(page).to have_current_path("/shelters/#{petaluma.id}")
+    expect(page).to have_content(new[:name])
+    expect(page).to have_content(new[:address])
+    expect(page).to have_content(new[:city])
+    expect(page).to have_content(new[:state])
+    expect(page).to have_content(new[:zip])
   end
 end
